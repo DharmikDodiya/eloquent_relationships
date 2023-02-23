@@ -35,5 +35,13 @@ Route::get('/passenger/{id}', [PassengerController::class, 'passengerdata']);
 
 Route::get('/photo/{id}',[PhotoController::class,'showPhoto']);
 
+Route::get('/{age}',function($age){
+    return view('welcome');
+})->middleware('age');
+
+Route::get('user/profile',function(){
+    return "user Profile";
+});
+
 
 
