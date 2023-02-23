@@ -5,11 +5,11 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Passenger extends Model
+class Video extends Model
 {
     use HasFactory;
-
-    public function driver(){
-        return $this->hasOneThrough(Driver::class,Vehicle::class);
+    public function reviews()
+    {
+        return $this->morphMany(Review::class, 'reviewable');
     }
 }

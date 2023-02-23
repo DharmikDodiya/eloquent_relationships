@@ -3,7 +3,8 @@
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
-//use App\Http\Controllers\
+use App\Http\Controllers\PassengerController;
+use App\Http\Controllers\PhotoController;
 
 /*
 |--------------------------------------------------------------------------
@@ -29,8 +30,10 @@ Route::get('showuser/{id}',[UserController::class,'index']);
 Route::get('showrole/{id}',[UserController::class,'show']);
 Route::get('showalluser',[UserController::class,'getData']);
 
+Route::get('/driver/{id}', [PassengerController::class, 'index']);
+Route::get('/passenger/{id}', [PassengerController::class, 'passengerdata']);
 
-
+Route::get('/photo/{id}',[PhotoController::class,'showPhoto']);
 
 
 
