@@ -8,16 +8,15 @@ use Illuminate\Http\Request;
 
 class PostController extends Controller
 {
-    public function showComment()
+    public function show($id)
     {
-        $comments = Post::find(1)->comments;
-  
-        return $comments;
+        $data = Post::find($id)->comments;
+        return view('showcomment',['data'=> $data]);
     }
 
-    public function showPost(){
-        $post = Comment::find(2)->post;
-
-        return $post;
+    public function showPost($id){
+        $data = Comment::find($id)->post;
+        return view('showpost',['data' => $data]);
     }
+
 }

@@ -5,11 +5,11 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Role extends Model
+class Passenger extends Model
 {
     use HasFactory;
 
-    public function users(){
-        return $this->belongsToMany(User::class,'role_users');
+    public function vehicleDriver(){
+        return $this->hasOneThrough(Driver::class,Vehicle::class);
     }
 }

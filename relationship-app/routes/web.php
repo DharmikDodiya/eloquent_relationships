@@ -1,7 +1,9 @@
 <?php
 
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
+//use App\Http\Controllers\
 
 /*
 |--------------------------------------------------------------------------
@@ -18,9 +20,17 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('showcomment',[PostController::class,'showComment']);
+Route::get('showcomment/{id}',[PostController::class,'show']);
 
-Route::get('showpost',[PostController::class,'showPost']);
+Route::get('showpost/{id}',[PostController::class,'showPost']);
 
 
-Route::get('getuser',);
+Route::get('showuser/{id}',[UserController::class,'index']);
+Route::get('showrole/{id}',[UserController::class,'show']);
+Route::get('showalluser',[UserController::class,'getData']);
+
+
+
+
+
+
